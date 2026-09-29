@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package agent;
+
+// LangGraph agent — mirrors REST POST /chat
+service AgentService {
+  rpc AskAgent(AgentRequest) returns (AgentResponse);
+}
+
+message AgentRequest {
+  string message = 1;
+}
+
+message ToolCall {
+  string tool = 1;
+  string args_json = 2;
+  string result = 3;
+}
+
+message AgentResponse {
+  string answer = 1;
+  repeated ToolCall tool_calls = 2;
+}

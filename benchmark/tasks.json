@@ -1,0 +1,95 @@
+[
+  {
+    "id": 1,
+    "workflow": "regulatory_brief",
+    "question": "What are the four functions in the NIST AI RMF?",
+    "required_tools": ["knowledge_search"],
+    "expected_contains": ["GOVERN", "MAP", "MEASURE", "MANAGE"]
+  },
+  {
+    "id": 2,
+    "workflow": "regulatory_brief",
+    "question": "What practices are prohibited under Article 5 of the EU AI Act?",
+    "required_tools": ["knowledge_search"],
+    "expected_contains": ["prohibited", "Article 5"]
+  },
+  {
+    "id": 3,
+    "workflow": "risk_register",
+    "question": "How many AI systems are classified as high risk in our register?",
+    "required_tools": ["sql_query"],
+    "expected_contains": ["3"],
+    "expected_numeric": 3
+  },
+  {
+    "id": 4,
+    "workflow": "audit_prep",
+    "question": "How many open compliance findings do we have for NIST in Q3?",
+    "required_tools": ["sql_query"],
+    "expected_contains": ["3"],
+    "expected_numeric": 3
+  },
+  {
+    "id": 5,
+    "workflow": "ops_metrics",
+    "question": "What was total Q3 revenue for product Alpha?",
+    "required_tools": ["sql_query"],
+    "expected_numeric": 440595.71,
+    "numeric_tolerance": 0.01
+  },
+  {
+    "id": 6,
+    "workflow": "ops_metrics",
+    "question": "What is 18% tax on 45000?",
+    "required_tools": ["calculator"],
+    "expected_contains": ["8100", "8,100"],
+    "expected_numeric": 8100,
+    "numeric_tolerance": 0.01
+  },
+  {
+    "id": 7,
+    "workflow": "ops_metrics",
+    "question": "Multiply 1250 by 12.",
+    "required_tools": ["calculator"],
+    "expected_numeric": 15000,
+    "numeric_tolerance": 0.01
+  },
+  {
+    "id": 8,
+    "workflow": "internal_policy",
+    "question": "What is our refund policy?",
+    "required_tools": ["web_search"],
+    "expected_contains": ["30 days", "refund"]
+  },
+  {
+    "id": 9,
+    "workflow": "audit_prep",
+    "question": "List open high-severity findings for EU framework in Q3.",
+    "required_tools": ["sql_query"],
+    "expected_contains": ["conformity", "high"]
+  },
+  {
+    "id": 10,
+    "workflow": "combined",
+    "question": "What was Q3 Alpha revenue and what are the four NIST AI RMF functions?",
+    "required_tools": ["sql_query", "knowledge_search"],
+    "expected_contains": ["GOVERN", "MAP"],
+    "expected_numeric": 440595.71,
+    "numeric_tolerance": 0.02
+  },
+  {
+    "id": 11,
+    "workflow": "combined",
+    "question": "What is 18% of Q3 Alpha revenue?",
+    "required_tools": ["sql_query", "calculator"],
+    "expected_numeric": 79307.23,
+    "numeric_tolerance": 0.03
+  },
+  {
+    "id": 12,
+    "workflow": "regulatory_brief",
+    "question": "How does India DPDP define personal data?",
+    "required_tools": ["knowledge_search"],
+    "expected_contains": ["personal data", "identif"]
+  }
+]
